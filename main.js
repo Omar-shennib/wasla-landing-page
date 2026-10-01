@@ -3,6 +3,23 @@
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var WA = 'https://wa.me/218930777510';
 
+  // Always open at the top: no restored scroll, no leftover #section in the URL.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  scrollTo(0, 0);
+
+  // In-page links scroll smoothly without writing #section into the URL.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1);
+    var target = id === 'top' ? document.body : document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    if (id === 'top') scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    else target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+  });
+
   // WhatsApp links carry a prefilled message per service.
   document.querySelectorAll('[data-wa]').forEach(function (a) {
     a.href = WA + '?text=' + encodeURIComponent(a.dataset.wa);
@@ -84,9 +101,12 @@
     words[cur].classList.add('is-out');
     (function (w) { setTimeout(function () { w.classList.remove('is-out'); }, 700); })(words[cur]);
     scenes[cur].classList.remove('is-on');
+    scenes[cur].classList.add('is-out');
+    (function (s) { setTimeout(function () { if (!s.classList.contains('is-on')) s.classList.remove('is-out'); }, 650); })(scenes[cur]);
     tabs[cur].classList.remove('is-on');
     cur = n;
     words[cur].classList.add('is-on');
+    scenes[cur].classList.remove('is-out');
     scenes[cur].classList.add('is-on');
     tabs[cur].classList.add('is-on');
     scenes[cur].querySelectorAll('[data-count]').forEach(countUp);
