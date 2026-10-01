@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>وصلة للحلول التقنية</title>
+  <meta name="description" content="وصلة للحلول التقنية — تطبيقات الجوال، الأنظمة الإدارية، أنظمة ERP والمنيو الرقمي QR في طرابلس، ليبيا.">
+  <script>
+    try { if (localStorage.getItem('wasla-lang') === 'en') { document.documentElement.lang = 'en'; document.documentElement.dir = 'ltr'; document.title = 'Wasla Tech Solutions'; } } catch (e) {}
+  </script>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" integrity="sha384-mZT2gIty7ZDdOGkxfP6joZcYdMW1Jvj9dRlfpTmaJAKKXTqzygtB22k7FLe+KZC1" crossorigin="anonymous" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+    <symbol id="i-system" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+    <symbol id="i-erp" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h2v2h-2zM18 18h2v2h-2zM14 18h2M18 14h2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H6.2"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8M12 13v8"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L4 16.8V20h3.2l5.3-5.3a4 4 0 0 0 5.2-5.4l-2.4 2.4-2.8-.8-.8-2.8z"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20h16M6 16l4-5 3 3 5-7"/></symbol>
+    <symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  </defs>
+</svg>
+
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Wasla">
+      <img src="assets/logo.svg" alt="وصلة WASLA" width="1290" height="525" onerror="this.remove()">
+      <span class="wordmark">وصلة</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services"><span lang="ar">الخدمات</span><span lang="en">Services</span></a>
+      <a href="#work"><span lang="ar">أعمالنا</span><span lang="en">Work</span></a>
+      <a href="#process"><span lang="ar">كيف نعمل</span><span lang="en">Process</span></a>
+    </nav>
+    <div class="nav-actions">
+      <button class="pill pill-dark" type="button" id="langToggle"><span lang="ar">English</span><span lang="en">العربية</span></button>
+      <a class="pill pill-light" href="#contact">
+        <span lang="ar">تواصل معنا</span><span lang="en">Contact us</span>
+        <svg class="ic arrow"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="avail"><i></i><span lang="ar">متاحون لمشاريع جديدة في ليبيا</span><span lang="en">Taking on new projects across Libya</span></p>
+      <h1 class="hero-title">
+        <span class="line"><span lang="ar">نحوّل فكرتك إلى</span><span lang="en">We turn your idea into</span></span>
+        <span class="line rot" aria-live="polite">
+          <span class="rot-w is-on"><span lang="ar">تطبيق جوال</span><span lang="en">a mobile app</span></span>
+          <span class="rot-w"><span lang="ar">نظام إداري</span><span lang="en">a business system</span></span>
+          <span class="rot-w"><span lang="ar">نظام ERP</span><span lang="en">an ERP</span></span>
+          <span class="rot-w"><span lang="ar">منيو رقمي</span><span lang="en">a QR menu</span></span>
+        </span>
+      </h1>
+      <div class="hero-row">
+        <p class="hero-sub">
+          <span lang="ar">وصلة للحلول التقنية. نصمّم ونبرمج الأنظمة والتطبيقات التي تشغّل نشاطك، ونبقى معك بعد الإطلاق.</span>
+          <span lang="en">Wasla is a software team. We design and build the apps and systems that run your business, and we stay with you after launch.</span>
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-orange" href="https://wa.me/218930777510" data-wa="مرحبا وصلة، أريد أن أبدأ مشروعًا" target="_blank" rel="noopener">
+            <svg class="ic"><use href="#i-chat"/></svg><span lang="ar">ابدأ مشروعك</span><span lang="en">Start your project</span>
+          </a>
+          <a class="btn btn-dark" href="#services"><span lang="ar">استكشف خدماتنا</span><span lang="en">Explore services</span></a>
+        </div>
+      </div>
+
+      <!-- Service stage: auto-cycles, synced with the headline -->
+      <div class="stage" data-reveal>
+        <div class="stage-screen">
+
+          <div class="scene scene-app is-on" data-scene="0">
+            <div class="fcard fcard-order">
+              <span class="fc-ic"><svg class="ic"><use href="#i-check"/></svg></span>
+              <div><b><span lang="ar">طلب جديد #1024</span><span lang="en">New order #1024</span></b><small dir="ltr">1,299 LYD</small></div>
+            </div>
+            <div class="phone">
+              <div class="ph-toast"><svg class="ic"><use href="#i-check"/></svg><span lang="ar">تم تأكيد طلبك، جاري التوصيل</span><span lang="en">Order confirmed, on its way</span></div>
+              <div class="ph-head">
+                <div><small><span lang="ar">مرحبًا بك</span><span lang="en">Welcome back</span></small><b><span lang="ar">متجر النور</span><span lang="en">Al Noor Store</span></b></div>
+                <span class="ph-bag"></span>
+              </div>
+              <div class="ph-search"><span lang="ar">ابحث عن منتج…</span><span lang="en">Search products…</span></div>
+              <div class="ph-banner">
+                <div><b><span lang="ar">خصم 20%</span><span lang="en">20% off</span></b><small><span lang="ar">على أجهزة الألعاب</span><span lang="en">on gaming gear</span></small></div>
+                <img src="assets/app/gamesir-super-nova.webp" alt="">
+              </div>
+              <div class="ph-grid">
+                <div class="ph-item"><img src="assets/app/iphone-17-pro-1.webp" alt=""><b>iPhone 17 Pro</b><small dir="ltr">1,299 LYD</small></div>
+                <div class="ph-item"><img src="assets/app/galaxy-s25-ultra-1.webp" alt=""><b>Galaxy S25</b><small dir="ltr">1,199 LYD</small></div>
+                <div class="ph-item"><img src="assets/app/legion-7-pro-1.webp" alt=""><b>Legion 7 Pro</b><small dir="ltr">2,399 LYD</small></div>
+                <div class="ph-item"><img src="assets/app/playstation-5-pro-1.webp" alt=""><b>PS5 Pro</b><small dir="ltr">699 LYD</small></div>
+              </div>
+              <div class="ph-tabbar"><i class="on"></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="fcard fcard-push">
+              <span class="fc-dot"></span>
+              <div><b><span lang="ar">إشعار للزبائن</span><span lang="en">Push notification</span></b><small><span lang="ar">وصل عرض جديد، اطلب الآن</span><span lang="en">New offer just landed</span></small></div>
+            </div>
+          </div>
+
+          <div class="scene scene-sys" data-scene="1">
+            <div class="win">
+              <div class="win-bar"><i></i><i></i><i></i><span dir="ltr">app.yourbusiness.ly</span></div>
+              <div class="win-body">
+                <aside class="win-side"><b></b><i class="on"></i><i></i><i></i><i></i><i></i></aside>
+                <div class="win-main">
+                  <div class="kpis">
+                    <div class="kpi"><small><span lang="ar">مبيعات اليوم</span><span lang="en">Sales today</span></small><b dir="ltr"><span data-count="2235">0</span> <em>LYD</em></b></div>
+                    <div class="kpi"><small><span lang="ar">الطلبات</span><span lang="en">Orders</span></small><b dir="ltr" data-count="48">0</b></div>
+                    <div class="kpi"><small><span lang="ar">صافي الربح</span><span lang="en">Net profit</span></small><b dir="ltr" class="up"><span data-count="735">0</span> <em>LYD</em></b></div>
+                  </div>
+                  <div class="chart">
+                    <i style="--h:38%"></i><i style="--h:52%"></i><i style="--h:44%"></i><i style="--h:66%"></i><i style="--h:58%"></i><i style="--h:74%"></i><i style="--h:62%"></i><i style="--h:81%"></i><i style="--h:70%"></i><i style="--h:88%"></i><i style="--h:79%"></i><i style="--h:96%"></i>
+                  </div>
+                  <div class="rows">
+                    <div class="row"><span>#2041</span><span>Galaxy S25 Ultra</span><span dir="ltr">1,199</span><em class="ok"><span lang="ar">مدفوع</span><span lang="en">Paid</span></em></div>
+                    <div class="row"><span>#2040</span><span>MX Master 4</span><span dir="ltr">119</span><em class="ok"><span lang="ar">مدفوع</span><span lang="en">Paid</span></em></div>
+                    <div class="row"><span>#2039</span><span>RTX 5080</span><span dir="ltr">1,199</span><em><span lang="ar">قيد التجهيز</span><span lang="en">Packing</span></em></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="scene scene-erp" data-scene="2">
+            <div class="fcard fcard-inv">
+              <span class="fc-ic"><svg class="ic"><use href="#i-check"/></svg></span>
+              <div><b dir="ltr">INV-2026-00418</b><small><span lang="ar">فاتورة مدفوعة</span><span lang="en">Invoice paid</span> <span dir="ltr">1,290 LYD</span></small></div>
+            </div>
+            <div class="win erp-win">
+              <div class="win-bar"><i></i><i></i><i></i><span dir="ltr">erp.yourcompany.ly</span></div>
+              <div class="erp-body">
+                <div class="erp-top">
+                  <div><b><span lang="ar">مساء الخير</span><span lang="en">Good evening</span></b><small><span lang="ar">أحمد، الفرع الرئيسي</span><span lang="en">Ahmed, main branch</span></small></div>
+                  <span class="erp-branches"><i></i><span lang="ar">3 فروع متصلة</span><span lang="en">3 branches online</span></span>
+                </div>
+                <div class="erp-grid">
+                  <div class="erp-mod" style="--c:#4c8dff"><span class="em-ic"><svg class="ic"><use href="#i-cart"/></svg></span><b><span lang="ar">نقطة البيع</span><span lang="en">Point of sale</span></b><small><span lang="ar">الورديات والمطابقة</span><span lang="en">Shifts and reconciliation</span></small></div>
+                  <div class="erp-mod" style="--c:#2bd576"><span class="em-ic"><svg class="ic"><use href="#i-list"/></svg></span><b><span lang="ar">المبيعات</span><span lang="en">Sales</span></b><small><span lang="ar">الفواتير والدفعات</span><span lang="en">Invoices and payments</span></small></div>
+                  <div class="erp-mod" style="--c:#ff641b"><span class="em-ic"><svg class="ic"><use href="#i-box"/></svg></span><b><span lang="ar">المخزون</span><span lang="en">Inventory</span></b><small><span lang="ar">المنتجات والتحويلات</span><span lang="en">Products and transfers</span></small></div>
+                  <div class="erp-mod" style="--c:#ff5c8a"><span class="em-ic"><svg class="ic"><use href="#i-heart"/></svg></span><b><span lang="ar">العملاء</span><span lang="en">Customers</span></b><small><span lang="ar">الولاء والعروض</span><span lang="en">Loyalty and offers</span></small></div>
+                  <div class="erp-mod" style="--c:#f5b43c"><span class="em-ic"><svg class="ic"><use href="#i-wrench"/></svg></span><b><span lang="ar">الصيانة</span><span lang="en">Repairs</span></b><small><span lang="ar">التذاكر وقطع الغيار</span><span lang="en">Tickets and parts</span></small></div>
+                  <div class="erp-mod" style="--c:#9b7bff"><span class="em-ic"><svg class="ic"><use href="#i-chart"/></svg></span><b><span lang="ar">المحاسبة</span><span lang="en">Accounting</span></b><small><span lang="ar">الأستاذ والتقارير</span><span lang="en">Ledger and reports</span></small></div>
+                </div>
+              </div>
+            </div>
+            <div class="fcard fcard-sync">
+              <span class="fc-dot"></span>
+              <div><b><span lang="ar">مزامنة لحظية</span><span lang="en">Live sync</span></b><small><span lang="ar">المخزون محدّث في كل الفروع</span><span lang="en">Stock updated in every branch</span></small></div>
+            </div>
+          </div>
+
+          <div class="scene scene-qr" data-scene="3">
+            <img class="qr-bg" src="https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3B4ODM4MjQ5LWltYWdlLWt3dnV6aTE5LmpwZw.jpg" alt="" loading="lazy">
+            <div class="qr-card">
+              <div class="qr-code"></div>
+              <span class="scanline"></span>
+              <small><span lang="ar">امسح الرمز وتواصل معنا</span><span lang="en">Scan to message us</span></small>
+            </div>
+            <div class="phone phone-menu">
+              <div class="menu-cover"><img src="https://live.staticflickr.com/1481/25039204229_f5d0b6c857_z.jpg" alt=""><b><span lang="ar">مطعم الواحة</span><span lang="en">Al Waha Kitchen</span></b></div>
+              <div class="menu-tabs"><i class="on"><span lang="ar">الكل</span><span lang="en">All</span></i><i><span lang="ar">برجر</span><span lang="en">Burgers</span></i><i><span lang="ar">حلويات</span><span lang="en">Desserts</span></i></div>
+              <div class="menu-item"><img src="https://live.staticflickr.com/1481/25039204229_f5d0b6c857_n.jpg" alt=""><div><b><span lang="ar">برجر كلاسيك</span><span lang="en">Classic burger</span></b><small dir="ltr">25 LYD</small></div></div>
+              <div class="menu-item"><img src="https://live.staticflickr.com/8769/18092872879_7b093039ed_n.jpg" alt=""><div><b><span lang="ar">بيتزا الفرن</span><span lang="en">Stone-oven pizza</span></b><small dir="ltr">32 LYD</small></div></div>
+              <div class="menu-item"><img src="https://live.staticflickr.com/7875/47098028862_df958e554f_n.jpg" alt=""><div><b><span lang="ar">طبق سوشي</span><span lang="en">Sushi platter</span></b><small dir="ltr">45 LYD</small></div></div>
+              <div class="menu-item"><img src="https://live.staticflickr.com/4166/34355029341_cbfd701793_n.jpg" alt=""><div><b><span lang="ar">تشيز كيك</span><span lang="en">Cheesecake</span></b><small dir="ltr">15 LYD</small></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-tabs" role="tablist">
+          <button role="tab" class="is-on" data-go="0"><svg class="ic"><use href="#i-phone"/></svg><span lang="ar">تطبيقات الجوال</span><span lang="en">Mobile apps</span><i></i></button>
+          <button role="tab" data-go="1"><svg class="ic"><use href="#i-system"/></svg><span lang="ar">الأنظمة الإدارية</span><span lang="en">Business systems</span><i></i></button>
+          <button role="tab" data-go="2"><svg class="ic"><use href="#i-erp"/></svg><span lang="ar">أنظمة ERP</span><span lang="en">ERP</span><i></i></button>
+          <button role="tab" data-go="3"><svg class="ic"><use href="#i-qr"/></svg><span lang="ar">المنيو الرقمي</span><span lang="en">QR menus</span><i></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries marquee -->
+  <div class="marquee" aria-label="Industries">
+    <div class="marquee-track">
+      <ul>
+        <li><span lang="ar">المطاعم والمقاهي</span><span lang="en">Restaurants and cafés</span></li>
+        <li><span lang="ar">متاجر الإلكترونيات</span><span lang="en">Electronics stores</span></li>
+        <li><span lang="ar">الصيدليات</span><span lang="en">Pharmacies</span></li>
+        <li><span lang="ar">العيادات</span><span lang="en">Clinics</span></li>
+        <li><span lang="ar">شركات التوزيع</span><span lang="en">Distributors</span></li>
+        <li><span lang="ar">المدارس</span><span lang="en">Schools</span></li>
+        <li><span lang="ar">المستودعات</span><span lang="en">Warehouses</span></li>
+        <li><span lang="ar">صالونات التجميل</span><span lang="en">Beauty salons</span></li>
+      </ul>
+      <ul aria-hidden="true">
+        <li><span lang="ar">المطاعم والمقاهي</span><span lang="en">Restaurants and cafés</span></li>
+        <li><span lang="ar">متاجر الإلكترونيات</span><span lang="en">Electronics stores</span></li>
+        <li><span lang="ar">الصيدليات</span><span lang="en">Pharmacies</span></li>
+        <li><span lang="ar">العيادات</span><span lang="en">Clinics</span></li>
+        <li><span lang="ar">شركات التوزيع</span><span lang="en">Distributors</span></li>
+        <li><span lang="ar">المدارس</span><span lang="en">Schools</span></li>
+        <li><span lang="ar">المستودعات</span><span lang="en">Warehouses</span></li>
+        <li><span lang="ar">صالونات التجميل</span><span lang="en">Beauty salons</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <h2><span lang="ar">كل ما يحتاجه نشاطك<br>ليعمل رقميًا.</span><span lang="en">Everything your business<br>needs to run digitally.</span></h2>
+        <p><span lang="ar">فريق واحد يصمّم ويبرمج ويشغّل ويدعم. تتعامل مع جهة واحدة من الفكرة حتى الإطلاق.</span><span lang="en">One team designs, builds, launches and supports. You deal with one partner from idea to launch.</span></p>
+      </div>
+
+      <div class="bento">
+        <article class="card svc" data-reveal>
+          <div class="svc-media media-app">
+            <img src="assets/app/iphone-17-pro-1.webp" alt="" loading="lazy">
+            <span class="chip-float cf-1">Android</span><span class="chip-float cf-2">iOS</span>
+          </div>
+          <div class="svc-body">
+            <span class="svc-ic"><svg class="ic"><use href="#i-phone"/></svg></span>
+            <h3><span lang="ar">تطبيقات الجوال</span><span lang="en">Mobile apps</span></h3>
+            <p><span lang="ar">تطبيق باسم نشاطك على أندرويد وآيفون. زبائنك يطلبون ويدفعون ويتابعون طلباتهم، وأنت تدير كل شيء من لوحة تحكم واحدة.</span><span lang="en">An app with your name on Android and iPhone. Customers order, pay and track, and you run everything from one dashboard.</span></p>
+            <ul class="checks">
+              <li><svg class="ic"><use href="#i-check"/></svg><span lang="ar">إشعارات فورية تعيد الزبائن إليك</span><span lang="en">Push notifications that bring customers back</span></li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span lang="ar">دفع إلكتروني أو عند الاستلام</span><span lang="en">Online or cash-on-delivery payment</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card svc" data-reveal style="--d:.08s">
+          <div class="svc-media media-sys">
+            <img src="assets/app/legion-7-pro-1.webp" alt="" loading="lazy">
+            <div class="mini-kpi"><small><span lang="ar">مبيعات اليوم</span><span lang="en">Sales today</span></small><b dir="ltr"><span data-count="2235">0</span> LYD</b><span class="spark"><i style="--h:30%"></i><i style="--h:50%"></i><i style="--h:42%"></i><i style="--h:70%"></i><i style="--h:62%"></i><i style="--h:90%"></i></span></div>
+          </div>
+          <div class="svc-body">
+            <span class="svc-ic"><svg class="ic"><use href="#i-system"/></svg></span>
+            <h3><span lang="ar">الأنظمة الإدارية والمواقع</span><span lang="en">Business systems and websites</span></h3>
+            <p><span lang="ar">نظام يطابق طريقة عملك بالضبط: مبيعات ومخزون وحجوزات وفواتير وتقارير، مع موقع احترافي يعرّف الناس بنشاطك.</span><span lang="en">A system that fits exactly how you work: sales, stock, bookings, invoices and reports, plus a professional website for your business.</span></p>
+            <ul class="checks">
+              <li><svg class="ic"><use href="#i-check"/></svg><span lang="ar">نقاط بيع وباركود وفواتير</span><span lang="en">Point of sale, barcodes and invoices</span></li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span lang="ar">تقرير أرباحك اليومي بضغطة</span><span lang="en">Your daily profit report in one click</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card svc" data-reveal>
+          <div class="svc-media media-erp">
+            <div class="tiles">
+              <span><span lang="ar">المحاسبة</span><span lang="en">Accounting</span></span>
+              <span><span lang="ar">المبيعات</span><span lang="en">Sales</span></span>
+              <span><span lang="ar">المخزون</span><span lang="en">Inventory</span></span>
+              <span><span lang="ar">المشتريات</span><span lang="en">Purchasing</span></span>
+              <span class="core">ERP</span>
+              <span><span lang="ar">الرواتب</span><span lang="en">Payroll</span></span>
+              <span><span lang="ar">الفروع</span><span lang="en">Branches</span></span>
+              <span><span lang="ar">التقارير</span><span lang="en">Reports</span></span>
+              <span><span lang="ar">العملاء</span><span lang="en">Customers</span></span>
+            </div>
+          </div>
+          <div class="svc-body">
+            <span class="svc-ic"><svg class="ic"><use href="#i-erp"/></svg></span>
+            <h3><span lang="ar">أنظمة ERP</span><span lang="en">ERP systems</span></h3>
+            <p><span lang="ar">كل أقسام شركتك في نظام واحد مترابط. المحاسبة تعرف ما باعته المبيعات، والمخزون يعرف ما اشترته المشتريات، والإدارة ترى كل شيء لحظة بلحظة.</span><span lang="en">Every department in one connected system. Accounting knows what sales sold, stock knows what purchasing bought, and management sees it all live.</span></p>
+            <ul class="checks">
+              <li><svg class="ic"><use href="#i-check"/></svg><span lang="ar">قيود محاسبية تلقائية</span><span lang="en">Automatic accounting entries</span></li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span lang="ar">صلاحيات لكل موظف حسب دوره</span><span lang="en">Access for every employee by role</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card svc" data-reveal style="--d:.08s">
+          <div class="svc-media media-qr">
+            <img src="https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvYTAxOS1qYWt1YmstMDIyNy1mYW5jeS1yZXN0YXVyYW50LWludGVyaW9yLmpwZw.jpg" alt="" loading="lazy">
+            <div class="qr-card qr-card-sm"><div class="qr-code"></div><span class="scanline"></span></div>
+          </div>
+          <div class="svc-body">
+            <span class="svc-ic"><svg class="ic"><use href="#i-qr"/></svg></span>
+            <h3><span lang="ar">المنيو الرقمي QR</span><span lang="en">QR menus</span></h3>
+            <p><span lang="ar">زبونك يمسح الرمز على الطاولة ويتصفح المنيو بالصور والأسعار. تغيّر سعرًا أو تضيف صنفًا في ثوانٍ، بدون طباعة من جديد.</span><span lang="en">Guests scan the code on the table and browse your menu with photos and prices. Change a price or add a dish in seconds, no reprinting.</span></p>
+            <ul class="checks">
+              <li><svg class="ic"><use href="#i-check"/></svg><span lang="ar">جاهز في أقل من ساعتين</span><span lang="en">Ready in under two hours</span></li>
+              <li><svg class="ic"><use href="#i-check"/></svg><span lang="ar">يفتح من الكاميرا مباشرة بدون تطبيق</span><span lang="en">Opens from the camera, no app needed</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <h2><span lang="ar">من أعمالنا.</span><span lang="en">Our work.</span></h2>
+        <p><span lang="ar">أنظمة حقيقية بنيناها لتشغيل أعمال حقيقية.</span><span lang="en">Real systems we built to run real businesses.</span></p>
+      </div>
+
+      <div class="cases">
+        <article class="card case case-erp" data-reveal>
+          <div class="case-body">
+            <span class="tag tag-new"><span lang="ar">جديد</span><span lang="en">New</span></span>
+            <h3><span lang="ar">نظام ERP متكامل لشركات التجزئة</span><span lang="en">An integrated ERP for retail companies</span></h3>
+            <p><span lang="ar">نظام عربي واحد يدير الشركة من كل فروعها: نقطة البيع والطلبات والفواتير والمخزون والصيانة والعملاء والمحاسبة.</span><span lang="en">One Arabic-first system that runs the whole company across branches: point of sale, orders, invoices, stock, repairs, customers and accounting.</span></p>
+            <ul class="mods">
+              <li><span lang="ar">نقطة البيع</span><span lang="en">Point of sale</span></li>
+              <li><span lang="ar">المبيعات والفواتير</span><span lang="en">Sales and invoices</span></li>
+              <li><span lang="ar">المخزون</span><span lang="en">Inventory</span></li>
+              <li><span lang="ar">الصيانة</span><span lang="en">Repairs</span></li>
+              <li><span lang="ar">العملاء والولاء</span><span lang="en">Customers and loyalty</span></li>
+              <li><span lang="ar">المحاسبة والمالية</span><span lang="en">Accounting and finance</span></li>
+            </ul>
+            <div class="deck-tabs" role="tablist" aria-label="ERP screens">
+              <button role="tab" class="is-on" data-card="0"><span lang="ar">الرئيسية</span><span lang="en">Home</span></button>
+              <button role="tab" data-card="1"><span lang="ar">الطلبات</span><span lang="en">Orders</span></button>
+              <button role="tab" data-card="2"><span lang="ar">الفواتير</span><span lang="en">Invoices</span></button>
+              <button role="tab" data-card="3"><span lang="ar">المنتجات</span><span lang="en">Products</span></button>
+            </div>
+          </div>
+          <div class="deck">
+            <img class="deck-card" src="assets/erp/erp-home.webp" alt="ERP home screen with modules" width="1720" height="999" loading="lazy">
+            <img class="deck-card" src="assets/erp/erp-orders.webp" alt="ERP orders list" width="1720" height="997" loading="lazy">
+            <img class="deck-card" src="assets/erp/erp-invoices.webp" alt="ERP invoices with totals" width="1720" height="997" loading="lazy">
+            <img class="deck-card" src="assets/erp/erp-products.webp" alt="ERP product catalogue" width="1720" height="997" loading="lazy">
+          </div>
+        </article>
+
+        <article class="card case case-pos" data-reveal>
+          <div class="work-shot" data-tilt>
+            <img class="shot-back" src="assets/pos/admin-products.webp" alt="Products list in the store admin panel" width="1721" height="998" loading="lazy">
+            <img class="shot-front" src="assets/pos/admin-dashboard.webp" alt="Sales dashboard in the store admin panel" width="1721" height="998" loading="lazy">
+          </div>
+          <div class="case-body">
+            <span class="tag tag-live"><span lang="ar">يعمل الآن</span><span lang="en">Live</span></span>
+            <h3><span lang="ar">نظام نقاط بيع ومتجر إلكتروني لمحل إلكترونيات</span><span lang="en">Point of sale and online store for an electronics shop</span></h3>
+            <p><span lang="ar">كاشير بالباركود، مخزون في عدة مستودعات، مشتريات وموردون، ورديات، تقارير أرباح، ومتجر إلكتروني يشتري منه الزبائن.</span><span lang="en">Barcode checkout, multi-warehouse stock, purchasing, cashier shifts, profit reports and an online store customers buy from.</span></p>
+            <ul class="mods">
+              <li><span lang="ar">الكاشير</span><span lang="en">Checkout</span></li>
+              <li><span lang="ar">المستودعات</span><span lang="en">Warehouses</span></li>
+              <li><span lang="ar">التقارير</span><span lang="en">Reports</span></li>
+              <li><span lang="ar">المتجر الإلكتروني</span><span lang="en">Online store</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section" id="process">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <h2><span lang="ar">من الفكرة إلى الإطلاق.</span><span lang="en">From idea to launch.</span></h2>
+        <p><span lang="ar">أربع خطوات واضحة، وتعرف في كل خطوة أين وصل مشروعك.</span><span lang="en">Four clear steps, and you always know where your project stands.</span></p>
+      </div>
+      <ol class="steps">
+        <li data-reveal><b>01</b><h3><span lang="ar">نسمع فكرتك</span><span lang="en">We listen</span></h3><p><span lang="ar">جلسة نفهم فيها نشاطك وما تحتاجه بالضبط.</span><span lang="en">A session to understand your business and what you need.</span></p></li>
+        <li data-reveal style="--d:.08s"><b>02</b><h3><span lang="ar">نصمّم الواجهات</span><span lang="en">We design</span></h3><p><span lang="ar">تشوف شكل النظام قبل البرمجة وتعدّل عليه براحتك.</span><span lang="en">You see the screens before any code and adjust freely.</span></p></li>
+        <li data-reveal style="--d:.16s"><b>03</b><h3><span lang="ar">نبرمج ونختبر</span><span lang="en">We build and test</span></h3><p><span lang="ar">نطوّر على مراحل وتتابع التقدّم أولًا بأول.</span><span lang="en">We build in stages and you follow every step.</span></p></li>
+        <li data-reveal style="--d:.24s"><b>04</b><h3><span lang="ar">نطلق وندعمك</span><span lang="en">We launch and support</span></h3><p><span lang="ar">نشغّل النظام وندرّب فريقك ونبقى معك بعد الإطلاق.</span><span lang="en">We launch, train your team and stay with you after.</span></p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-panel" data-reveal>
+        <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+
+        <div class="contact-head">
+          <p class="avail"><i></i><span lang="ar">متاحون دائمًا</span><span lang="en">Always open</span></p>
+          <h2><span lang="ar">لنبدأ مشروعك.</span><span lang="en">Let’s start your project.</span></h2>
+          <p><span lang="ar">تواصل معنا بالطريقة التي تناسبك. أخبرنا عن نشاطك ونعود إليك بتصوّر واضح للحل والتكلفة والمدة.</span><span lang="en">Reach us however suits you. Tell us about your business and we’ll come back with a clear plan, cost and timeline.</span></p>
+        </div>
+
+        <div class="reach">
+          <a class="reach-card reach-wa" data-reveal href="https://wa.me/218930777510" data-wa="مرحبا وصلة، أريد أن أبدأ مشروعًا" target="_blank" rel="noopener">
+            <div class="reach-top">
+              <span class="reach-ic"><svg class="ic"><use href="#i-chat"/></svg></span>
+              <svg class="ic arrow go-ic"><use href="#i-arrow"/></svg>
+            </div>
+            <div class="chat" aria-hidden="true">
+              <p class="bubble me"><span lang="ar">مرحبا، أريد تطبيقًا لمتجري</span><span lang="en">Hi, I need an app for my store</span></p>
+              <p class="bubble typing"><i></i><i></i><i></i></p>
+              <p class="bubble them"><span lang="ar">أهلًا بك! أخبرنا عن نشاطك ونرسل لك تصوّرًا كاملًا.</span><span lang="en">Welcome! Tell us about your business and we’ll send a full plan.</span></p>
+            </div>
+            <div class="reach-text">
+              <small><span lang="ar">واتساب</span><span lang="en">WhatsApp</span></small>
+              <b><span lang="ar">ابدأ المحادثة الآن</span><span lang="en">Start the conversation</span></b>
+            </div>
+          </a>
+
+          <a class="reach-card" data-reveal style="--d:.06s" href="tel:+218930777510">
+            <div class="reach-top">
+              <span class="reach-ic"><svg class="ic"><use href="#i-call"/></svg></span>
+              <svg class="ic arrow go-ic"><use href="#i-arrow"/></svg>
+            </div>
+            <div class="reach-text">
+              <small><span lang="ar">اتصل بنا</span><span lang="en">Call us</span></small>
+              <b dir="ltr">093-0777510</b>
+            </div>
+          </a>
+
+          <a class="reach-card" data-reveal style="--d:.12s" href="https://www.facebook.com/profile.php?id=61592527904600" target="_blank" rel="noopener">
+            <div class="reach-top">
+              <span class="reach-ic"><svg class="ic"><use href="#i-fb"/></svg></span>
+              <svg class="ic arrow go-ic"><use href="#i-arrow"/></svg>
+            </div>
+            <div class="reach-text">
+              <small><span lang="ar">فيسبوك</span><span lang="en">Facebook</span></small>
+              <b><span lang="ar">تابع أعمالنا وعروضنا</span><span lang="en">Follow our work and offers</span></b>
+            </div>
+          </a>
+
+          <a class="reach-card" data-reveal style="--d:.18s" href="https://www.google.com/maps/search/?api=1&amp;query=Bin+Ashour+Street+Tripoli+Libya" target="_blank" rel="noopener">
+            <div class="reach-top">
+              <span class="reach-ic"><svg class="ic"><use href="#i-pin"/></svg></span>
+              <svg class="ic arrow go-ic"><use href="#i-arrow"/></svg>
+            </div>
+            <div class="reach-text">
+              <small><span lang="ar">زورنا</span><span lang="en">Visit us</span></small>
+              <b><span lang="ar">شارع بن عاشور، طرابلس</span><span lang="en">Bin Ashour Street, Tripoli</span></b>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/logo.svg" alt="وصلة WASLA" width="1290" height="525" onerror="this.remove()">
+        <p><span lang="ar">وصلة للحلول التقنية. نصمّم ونبرمج التطبيقات والأنظمة التي تشغّل الأعمال في ليبيا.</span><span lang="en">Wasla Tech Solutions. We design and build the apps and systems that run businesses in Libya.</span></p>
+        <a class="btn btn-orange" href="https://wa.me/218930777510" data-wa="مرحبا وصلة، أريد أن أبدأ مشروعًا" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg><span lang="ar">ابدأ مشروعك</span><span lang="en">Start your project</span></a>
+      </div>
+      <nav class="foot-col" aria-label="Services">
+        <h3><span lang="ar">الخدمات</span><span lang="en">Services</span></h3>
+        <a href="#services"><span lang="ar">تطبيقات الجوال</span><span lang="en">Mobile apps</span></a>
+        <a href="#services"><span lang="ar">الأنظمة الإدارية والمواقع</span><span lang="en">Business systems</span></a>
+        <a href="#services"><span lang="ar">أنظمة ERP</span><span lang="en">ERP systems</span></a>
+        <a href="#services"><span lang="ar">المنيو الرقمي QR</span><span lang="en">QR menus</span></a>
+      </nav>
+      <nav class="foot-col" aria-label="Company">
+        <h3><span lang="ar">الشركة</span><span lang="en">Company</span></h3>
+        <a href="#work"><span lang="ar">أعمالنا</span><span lang="en">Our work</span></a>
+        <a href="#process"><span lang="ar">كيف نعمل</span><span lang="en">How we work</span></a>
+        <a href="#contact"><span lang="ar">تواصل معنا</span><span lang="en">Contact</span></a>
+      </nav>
+      <div class="foot-col">
+        <h3><span lang="ar">تواصل</span><span lang="en">Get in touch</span></h3>
+        <a href="tel:+218930777510" dir="ltr" class="ltr-start">093-0777510</a>
+        <a href="https://wa.me/218930777510" target="_blank" rel="noopener"><span lang="ar">واتساب</span><span lang="en">WhatsApp</span></a>
+        <a href="https://www.facebook.com/profile.php?id=61592527904600" target="_blank" rel="noopener">Facebook</a>
+        <span><span lang="ar">شارع بن عاشور، طرابلس، ليبيا</span><span lang="en">Bin Ashour Street, Tripoli, Libya</span></span>
+      </div>
+    </div>
+
+    <div class="foot-mark" aria-hidden="true">وصلة</div>
+
+    <div class="foot-bottom">
+      <span><span lang="ar">© 2026 وصلة للحلول التقنية. جميع الحقوق محفوظة.</span><span lang="en">© 2026 Wasla Tech Solutions. All rights reserved.</span></span>
+      <span class="foot-tag"><span lang="ar">نربط أفكارك بالتقنية</span><span lang="en">Connecting your ideas with technology</span></span>
+      <a class="to-top" href="#top"><span lang="ar">للأعلى</span><span lang="en">Back to top</span><svg class="ic"><use href="#i-up"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<a class="float-call" href="tel:+218930777510" aria-label="Call 093-0777510"><svg class="ic"><use href="#i-call"/></svg><span dir="ltr">093-0777510</span></a>
+
+</body>
+</html>
