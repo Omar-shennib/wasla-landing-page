@@ -110,8 +110,11 @@ html[dir="rtl"] .pill:hover .arrow { transform: scaleX(-1) translateX(4px); }
   box-shadow: inset 0 0 0 1px var(--line-2); font-size: .9rem; color: #d6d6d6;
   animation: rise .8s var(--ease) both;
 }
-.avail i { width: 8px; height: 8px; border-radius: 50%; background: #2bd576; box-shadow: 0 0 0 0 rgb(43 213 118 / .6); animation: ping 2s infinite; }
-@keyframes ping { 70% { box-shadow: 0 0 0 10px rgb(43 213 118 / 0); } 100% { box-shadow: 0 0 0 0 rgb(43 213 118 / 0); } }
+.avail i { position: relative; width: 8px; height: 8px; border-radius: 50%; background: #2bd576; }
+/* Pulse ring animates only transform/opacity, so the GPU never has to repaint the surrounding layer. */
+.avail i::after, .erp-branches i::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: inherit; animation: ping 2s ease-out infinite; }
+@keyframes ping { from { transform: scale(1); opacity: .6; } 70%, to { transform: scale(2.6); opacity: 0; } }
+@keyframes dotPulse { 50% { opacity: .35; } }
 
 .hero-title {
   margin-top: 1.5rem;
@@ -160,10 +163,15 @@ html[lang="en"] .hero-title { letter-spacing: -.045em; line-height: 1.02; }
 }
 .scene {
   position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 2rem;
-  opacity: 0; visibility: hidden; transform: scale(.96); filter: blur(8px);
-  transition: opacity .6s var(--ease), transform .8s var(--ease), filter .6s var(--ease), visibility 0s .6s;
+  opacity: 0; visibility: hidden; transform: translateY(32px) scale(.98);
+  transition: opacity .38s var(--ease), transform .6s var(--ease), visibility 0s .6s;
 }
-.scene.is-on { opacity: 1; visibility: visible; transform: none; filter: none; transition-delay: 0s; }
+/* Outgoing scene drifts up and away; the next one rises in just after, so two similar screens never cross-fade in place. */
+.scene.is-out { transform: translateY(-32px) scale(.98); }
+.scene.is-on {
+  opacity: 1; visibility: visible; transform: none;
+  transition: opacity .55s var(--ease) .22s, transform .85s var(--ease) .22s, visibility 0s;
+}
 
 .stage-tabs {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: .5rem; margin-top: 1rem;
@@ -196,7 +204,18 @@ html[dir="rtl"] .stage-tabs i { transform-origin: right; }
   box-shadow: inset 0 0 0 1px #2a2a2a, 0 0 0 7px #1a1a1a, 0 0 0 8px #333, 0 40px 80px -20px rgb(0 0 0 / .9);
   overflow: hidden; font-family: var(--display);
 }
-.phone::before { content: ""; position: absolute; top: 9px; left: 50%; width: 70px; height: 20px; margin-left: -35px; border-radius: 20px; background: #000; z-index: 3; }
+/* Dynamic Island */
+.phone::before {
+  content: ""; position: absolute; z-index: 5; top: 10px; left: 50%; width: 78px; height: 23px; margin-left: -39px; border-radius: 20px;
+  background: #000;
+}
+/* Device wrapper carries the side buttons (the phone itself clips its screen) */
+.device { position: relative; flex: none; }
+.device::before { content: ""; position: absolute; right: -12px; top: 132px; width: 4px; height: 72px; border-radius: 0 3px 3px 0; background: linear-gradient(90deg, #2b2b2b, #444); }
+.device::after {
+  content: ""; position: absolute; left: -12px; top: 98px; width: 4px; height: 132px; border-radius: 3px 0 0 3px;
+  background: linear-gradient(#3b3b3b 0 24px, transparent 24px 40px, #3b3b3b 40px 82px, transparent 82px 92px, #3b3b3b 92px 132px);
+}
 
 /* Scene: app */
 .ph-head { display: flex; align-items: center; justify-content: space-between; margin-top: 26px; }
@@ -220,14 +239,14 @@ html[dir="rtl"] .stage-tabs i { transform-origin: right; }
 .ph-tabbar i { width: 18px; height: 18px; border-radius: 6px; background: #3a3a3a; }
 .ph-tabbar i.on { background: var(--orange); }
 .ph-toast {
-  position: absolute; z-index: 4; inset-inline: 10px; top: 10px; display: flex; align-items: center; gap: 6px;
+  position: absolute; z-index: 4; inset-inline: 10px; top: 40px; display: flex; align-items: center; gap: 6px;
   padding: 9px 10px; border-radius: 14px; background: rgb(35 35 35 / .92); backdrop-filter: blur(8px);
   font-size: 10.5px; box-shadow: 0 10px 30px rgb(0 0 0 / .6);
-  transform: translateY(-140%);
+  transform: translateY(-260%);
 }
 .ph-toast .ic { color: #2bd576; }
 .scene-app.is-on .ph-toast { animation: toast 5.5s var(--ease) .9s both; }
-@keyframes toast { 0% { transform: translateY(-140%); } 10%, 75% { transform: none; } 90%, 100% { transform: translateY(-140%); } }
+@keyframes toast { 0% { transform: translateY(-260%); } 10%, 75% { transform: none; } 90%, 100% { transform: translateY(-260%); } }
 .scene-app.is-on .ph-item { animation: pop .6s var(--spring) both; }
 .scene-app.is-on .ph-item:nth-child(2) { animation-delay: .08s; }
 .scene-app.is-on .ph-item:nth-child(3) { animation-delay: .16s; }
@@ -236,7 +255,7 @@ html[dir="rtl"] .stage-tabs i { transform-origin: right; }
 
 .fcard {
   display: flex; align-items: center; gap: .7rem; padding: .8rem 1rem; border-radius: 18px;
-  background: rgb(24 24 24 / .85); backdrop-filter: blur(10px); box-shadow: inset 0 0 0 1px var(--line-2), 0 20px 50px -10px rgb(0 0 0 / .8);
+  background: rgb(24 24 24 / .96); box-shadow: inset 0 0 0 1px var(--line-2), 0 20px 50px -10px rgb(0 0 0 / .8);
   font-family: var(--display); line-height: 1.3;
 }
 .fcard b { display: block; font-size: .92rem; }
@@ -272,10 +291,10 @@ html[dir="rtl"] .stage-tabs i { transform-origin: right; }
 .kpi em { font-style: normal; font-size: 12px; color: var(--mute); }
 .kpi .up { color: #2bd576; }
 .chart { display: flex; align-items: flex-end; gap: 8px; height: 110px; padding: 10px 12px; border-radius: 12px; background: #141414; box-shadow: inset 0 0 0 1px #1f1f1f; }
-.chart i { flex: 1; height: var(--h); border-radius: 5px 5px 2px 2px; background: linear-gradient(var(--orange), rgb(255 100 27 / .25)); transform-origin: bottom; transform: scaleY(0); }
+.chart i { flex: 1; height: var(--h); border-radius: 5px 5px 2px 2px; background: linear-gradient(var(--orange), rgb(255 100 27 / .25)); transform-origin: bottom; }
 .scene-sys.is-on .chart i { animation: grow .8s var(--spring) both; }
 .scene-sys.is-on .chart i:nth-child(n) { animation-delay: calc(var(--i, 0) * 40ms + .2s); }
-@keyframes grow { to { transform: scaleY(1); } }
+@keyframes grow { from { transform: scaleY(0); } }
 .rows { display: grid; gap: 6px; }
 .row { display: grid; grid-template-columns: 60px 1fr 70px 90px; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 10px; background: #121212; font-size: 12px; color: #cfcfcf; }
 .row em { font-style: normal; justify-self: end; padding: 3px 10px; border-radius: 999px; font-size: 11px; background: rgb(255 100 27 / .14); color: var(--orange-2); }
@@ -292,7 +311,7 @@ html[dir="rtl"] .stage-tabs i { transform-origin: right; }
 .erp-top b { display: block; font-size: 20px; }
 .erp-top small { color: var(--mute); font-size: 11.5px; }
 .erp-branches { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 999px; background: rgb(43 213 118 / .1); color: #2bd576; font-size: 11px; white-space: nowrap; }
-.erp-branches i { width: 7px; height: 7px; border-radius: 50%; background: #2bd576; animation: ping 2s infinite; }
+.erp-branches i { position: relative; width: 7px; height: 7px; border-radius: 50%; background: #2bd576; }
 .erp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .erp-mod {
   display: grid; gap: 4px; padding: 12px; border-radius: 12px; background: #141414; box-shadow: inset 0 0 0 1px #222;
@@ -302,14 +321,32 @@ html[dir="rtl"] .stage-tabs i { transform-origin: right; }
 .erp-mod small { color: var(--mute); font-size: 10.5px; line-height: 1.4; }
 .em-ic { display: grid; place-items: center; width: 32px; height: 32px; margin-bottom: 4px; border-radius: 9px; color: var(--c); background: color-mix(in srgb, var(--c) 16%, transparent); }
 .em-ic .ic { width: 17px; height: 17px; }
-.scene-erp.is-on .erp-mod { animation: pop .6s var(--spring) both, modHi 6s ease-in-out infinite; }
+/* Tiles start hidden and pop in, so there is never a frame of a visible tile that then vanishes (the old flicker).
+   While the scene leaves (.is-out) they stay visible. Lift uses `translate`, glow uses a ::after layer,
+   so no two animations fight over the same property. */
+.erp-mod { position: relative; opacity: 0; transform: translateY(16px) scale(.92); }
+.erp-mod::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0;
+  box-shadow: inset 0 0 0 1px var(--c), 0 10px 30px -12px var(--c);
+}
+.scene-erp.is-out .erp-mod { opacity: 1; transform: none; }
+.scene-erp.is-on .erp-mod { animation: tileIn .6s var(--spring) forwards, modLift 6s ease-in-out infinite; }
+.scene-erp.is-on .erp-mod::after { animation: modHi 6s ease-in-out infinite; }
 .scene-erp.is-on .erp-mod:nth-child(1) { animation-delay: 0s, .8s; }
 .scene-erp.is-on .erp-mod:nth-child(2) { animation-delay: .06s, 1.8s; }
 .scene-erp.is-on .erp-mod:nth-child(3) { animation-delay: .12s, 2.8s; }
 .scene-erp.is-on .erp-mod:nth-child(4) { animation-delay: .18s, 3.8s; }
 .scene-erp.is-on .erp-mod:nth-child(5) { animation-delay: .24s, 4.8s; }
 .scene-erp.is-on .erp-mod:nth-child(6) { animation-delay: .3s, 5.8s; }
-@keyframes modHi { 0%, 20%, 100% { box-shadow: inset 0 0 0 1px #222; transform: none; } 6%, 14% { box-shadow: inset 0 0 0 1px var(--c), 0 10px 30px -12px var(--c); transform: translateY(-3px); } }
+.scene-erp.is-on .erp-mod:nth-child(1)::after { animation-delay: .8s; }
+.scene-erp.is-on .erp-mod:nth-child(2)::after { animation-delay: 1.8s; }
+.scene-erp.is-on .erp-mod:nth-child(3)::after { animation-delay: 2.8s; }
+.scene-erp.is-on .erp-mod:nth-child(4)::after { animation-delay: 3.8s; }
+.scene-erp.is-on .erp-mod:nth-child(5)::after { animation-delay: 4.8s; }
+.scene-erp.is-on .erp-mod:nth-child(6)::after { animation-delay: 5.8s; }
+@keyframes tileIn { to { opacity: 1; transform: none; } }
+@keyframes modLift { 0%, 20%, 100% { translate: 0 0; } 6%, 14% { translate: 0 -3px; } }
+@keyframes modHi { 0%, 20%, 100% { opacity: 0; } 6%, 14% { opacity: 1; } }
 .fcard-inv { align-self: flex-start; margin-top: 14%; }
 .fcard-inv small { display: flex; gap: .4rem; white-space: nowrap; }
 .fcard-inv small span + span { color: #2bd576; }
@@ -335,23 +372,27 @@ html[dir="rtl"] .stage-tabs i { transform-origin: right; }
   animation: scan 2.2s ease-in-out infinite alternate;
 }
 @keyframes scan { to { top: calc(100% - 50px); } }
-.phone-menu { padding: 0; }
-.phone-menu::before { display: none; }
-.menu-cover { position: relative; height: 130px; }
+.menu-cover { position: relative; height: 112px; margin-top: 26px; border-radius: 16px; overflow: hidden; }
 .menu-cover img { width: 100%; height: 100%; object-fit: cover; }
-.menu-cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 30%, #0e0e0e); }
-.menu-cover b { position: absolute; z-index: 1; bottom: 10px; inset-inline-start: 14px; font-size: 17px; }
-.menu-tabs { display: flex; gap: 6px; padding: 8px 12px; }
+.menu-cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 30%, rgb(14 14 14 / .95)); }
+.menu-cover b { position: absolute; z-index: 1; bottom: 10px; inset-inline-start: 12px; font-size: 16px; }
+.menu-tabs { display: flex; gap: 6px; padding: 10px 0 8px; }
 .menu-tabs i { font-style: normal; padding: 5px 11px; border-radius: 999px; background: #1b1b1b; font-size: 11px; }
 .menu-tabs i.on { background: var(--orange); color: #150800; }
-.menu-item { display: flex; align-items: center; gap: 10px; margin: 0 12px 8px; padding: 6px; border-radius: 14px; background: #171717; }
-.menu-item img { width: 52px; height: 52px; border-radius: 10px; object-fit: cover; }
+.menu-item { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; padding: 6px; border-radius: 14px; background: #171717; }
+.menu-item img { width: 50px; height: 50px; border-radius: 10px; object-fit: cover; }
 .menu-item b { display: block; font-size: 12.5px; }
 .menu-item small { font-size: 11.5px; color: var(--orange); }
-.scene-qr.is-on .menu-item { animation: slideIn .6s var(--ease) both; }
-.scene-qr.is-on .menu-item:nth-of-type(2) { animation-delay: .1s; }
-.scene-qr.is-on .menu-item:nth-of-type(3) { animation-delay: .2s; }
-.scene-qr.is-on .menu-item:nth-of-type(4) { animation-delay: .3s; }
+/* Menu builds up one piece at a time; pieces start hidden (no flash) and stay visible while the scene leaves. */
+.phone-menu > * { opacity: 0; transform: translateY(16px) scale(.94); }
+.scene-qr.is-out .phone-menu > * { opacity: 1; transform: none; }
+.scene-qr.is-on .phone-menu > * { animation: tileIn .6s var(--spring) forwards; }
+.scene-qr.is-on .phone-menu > :nth-child(1) { animation-delay: .25s; }
+.scene-qr.is-on .phone-menu > :nth-child(2) { animation-delay: .4s; }
+.scene-qr.is-on .phone-menu > :nth-child(3) { animation-delay: .55s; }
+.scene-qr.is-on .phone-menu > :nth-child(4) { animation-delay: .7s; }
+.scene-qr.is-on .phone-menu > :nth-child(5) { animation-delay: .85s; }
+.scene-qr.is-on .phone-menu > :nth-child(6) { animation-delay: 1s; }
 .scene-qr.is-on .qr-card { animation: floatIn .8s var(--spring) both; }
 
 /* ---------- Marquee ---------- */
@@ -446,7 +487,7 @@ html[lang="en"] .case-body h3 { letter-spacing: -.02em; }
 .mods li { padding: .4rem .8rem; border-radius: 999px; background: var(--panel-2); box-shadow: inset 0 0 0 1px var(--line-2); font-size: .86rem; color: #d4d4d4; }
 .tag { justify-self: start; display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .85rem; border-radius: 999px; background: var(--panel-2); box-shadow: inset 0 0 0 1px var(--line-2); font-size: .85rem; color: #d0d0d0; }
 .tag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--orange); }
-.tag-live::before { background: #2bd576; animation: ping 2s infinite; }
+.tag-live::before { background: #2bd576; animation: dotPulse 2s ease-in-out infinite; }
 .tag-new { background: rgb(255 100 27 / .12); box-shadow: inset 0 0 0 1px rgb(255 100 27 / .4); color: var(--orange-2); }
 
 /* ERP: stack of screens, the active one shuffles to the front */
