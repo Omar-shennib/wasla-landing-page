@@ -38,10 +38,10 @@
     }, reduce ? 0 : 220);
   });
 
-  // Nav state, scroll progress, floating call button.
+  // Nav state, scroll progress, floating WhatsApp button.
   var nav = document.querySelector('.nav');
   var bar = document.querySelector('.progress');
-  var call = document.querySelector('.float-call');
+  var call = document.querySelector('.float-wa');
   var contact = document.getElementById('contact');
   function onScroll() {
     var y = scrollY, max = root.scrollHeight - innerHeight;
